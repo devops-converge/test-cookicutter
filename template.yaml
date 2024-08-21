@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: new-repo-service
+  name: new-repo-service-2
   title: Create a new repo servicce
   description: A template to create a new service
   tags:
