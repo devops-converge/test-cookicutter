@@ -71,7 +71,7 @@ spec:
       name: Bootstrapping your new service
       action: trigger:harness-custom-pipeline
       input:
-        url: "YOUR PIPELINE URL HERE"
+        url: https://app.harness.io/ng/account/qQg-poUqSlqFl9CeAJVmzg/module/idp-admin/orgs/default/projects/testvictor/pipelines/idpworkflowpipeline/pipeline-studio?storeType=INLINE
         inputset:
           organization: ${{ parameters.organization_name }}
           project_name: ${{ parameters.project_name }}
