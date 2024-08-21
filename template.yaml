@@ -78,6 +78,7 @@ spec:
         projectId: testvictor
         orgId: default
         secretValue: ${{ parameters.secretValue }}
+        apikey: ${{ parameters.token }}
     - id: trigger
       name: Bootstrapping your new service
       action: trigger:harness-custom-pipeline
