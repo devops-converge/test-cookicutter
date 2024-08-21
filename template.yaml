@@ -60,6 +60,10 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        secretValue:
+          title: Your credentials
+          type: string
+          ui:widget: password      
         # This field is hidden but needed to authenticate the request to trigger the pipeline
         token:
           title: Harness Token
@@ -67,6 +71,13 @@ spec:
           ui:widget: password
           ui:field: HarnessAuthToken
   steps:
+    - id: createsecret
+      name: Create Harness secret
+      action: harness:create-secret
+      input:
+        projectId: testvictor
+        orgId: default
+        secretValue: ${{ parameters.secretValue }}
     - id: trigger
       name: Bootstrapping your new service
       action: trigger:harness-custom-pipeline
@@ -80,7 +91,16 @@ spec:
           repository_description: ${{ parameters.repository_description }}
           repository_default_branch: ${{ parameters.repository_default_branch }}
           direct_push_branch: ${{ parameters.direct_push_branch }}
+          secret: ${{ steps.createsecret.output.secretId }}
         apikey: ${{ parameters.token }}
+    - id: deletesecret
+      name: Delete the Harness secret
+      action: harness:delete-secret
+      input:
+        projectId: testvictor
+        orgId: default
+        secretId: ${{ steps.createsecret.output.secretId }}
+        apikey: ${{ parameters.token }}   
 
   output:
     links:
