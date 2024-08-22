@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: new-service-s3-creation
+  name: new-service-s3-creation-2
   title: Create a servicce with S3 bucket
   description: A template to create a new service
   tags:
