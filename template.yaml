@@ -52,7 +52,7 @@ spec:
         direct_push_branch:
           title: Name of your Develop branch
           type: string
-          default: main  
+          default: develop  
         owner:
           title: Choose an Owner for the Service
           type: string
