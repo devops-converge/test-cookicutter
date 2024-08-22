@@ -93,7 +93,6 @@ spec:
           repository_default_branch: ${{ parameters.repository_default_branch }}
           direct_push_branch: ${{ parameters.direct_push_branch }}
           secret: ${{ steps.createsecret.output.secretId }}
-          platform_api_key: ${{ parameters.token }}
         apikey: ${{ parameters.token }}
     - id: deletesecret
       name: Delete the Harness secret
