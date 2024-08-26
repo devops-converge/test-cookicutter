@@ -61,7 +61,7 @@ spec:
             allowedKinds:
               - Group
         secretValue:
-          title: Your credentials
+          title: Your credentials test
           type: string
           ui:widget: password      
         # This field is hidden but needed to authenticate the request to trigger the pipeline
